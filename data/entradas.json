@@ -1,0 +1,19 @@
+{
+    "entradas": [
+    {
+        "proyecto":"Comafi",
+        "tarea":"HBI Trasnferencia Exterior",
+        "fecha":"10-Marzo-2020",
+        "horas":8,
+        "descripcion":"Configuracion Navegacion"
+    },
+    {
+        "proyecto":"Comafi",
+        "tarea":"HBI Trasnferencia Exterior",
+        "fecha":"11-Marzo-2020",
+        "horas":8,
+        "descripcion":"Formulario Paso 1"
+    }
+    ]
+}
+
