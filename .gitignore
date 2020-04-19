@@ -1,3 +1,9 @@
 # vim swap files   #
 ####################
 .swp
+# node js environment files #
+#############################
+.env
+# modulos de nodejs         #
+#############################
+node_modules/

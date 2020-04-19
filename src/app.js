@@ -1,7 +1,18 @@
 //Api horas extra
+const express = require('express')
+const app = express();
+
+require('dotenv').config();
+const port = process.env.PORT||3000;
 const data = require('./data');
 
-console.log(data.entradas);
+app.get("/entradas",(req,res) => {
+    return res.send(data.entradas);
+});
+
+app.listen(port,() => 
+    console.log(`Api xTras escuchando en puerto ${port}`),
+);
 
 /**
 function buildEntrada(value,index,array){
