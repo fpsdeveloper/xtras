@@ -10,6 +10,10 @@ app.get("/entradas",(req,res) => {
     return res.send(data.entradas);
 });
 
+app.get("/entradas/:id",(req,res) => {
+    res.send(data.entradas[req.params.id]);
+});
+
 app.listen(port,() => 
     console.log(`Api xTras escuchando en puerto ${port}`),
 );
