@@ -5,11 +5,12 @@ const dataPath = "./data";
 
 const archivo =`${dataPath}\\entradas.json`;
 
-//console.log(archivo);
+obtieneData(archivo);
 
-let entradasData = futils.readFileSync(archivo);
-
-//console.log(entradasData);
+async function obtieneData(archivo){
+   let datos = await futils.readFile(archivo); 
+   exports.entradas = datos.entradas.map(creaEntrada); 
+}
 
 function creaEntrada(data){
     let o = Object.create(modelos.entrada);
@@ -22,11 +23,3 @@ function creaEntrada(data){
 
     return o;
 }
-
-let entradas = entradasData.entradas.map(creaEntrada);
-
-//console.log(entradas);
-
-exports.entradas = entradas;
-
-

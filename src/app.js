@@ -10,8 +10,11 @@ app.get("/entradas",(req,res) => {
     return res.send(data.entradas);
 });
 
-app.get("/entradas/:id",(req,res) => {
-    res.send(data.entradas[req.params.id]);
+app.get("/entradas/:index",(req,res) => {
+    if (data.entradas.length <= parseInt(req.params.index)){
+        return res.status(404).send(`No se encuentra la entrada con el indice: ${req.params.index}.`); 
+    }
+    return res.send(data.entradas[req.params.index]);
 });
 
 app.listen(port,() => 
