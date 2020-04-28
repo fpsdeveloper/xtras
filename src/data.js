@@ -1,11 +1,14 @@
 const futils = require('./fileUtils');
 const modelos = require('./model');
+const winston = require('../config/winston')
 
 const dataPath = "./data";
 
 const archivo =`${dataPath}\\entradas.json`;
 
-obtieneData(archivo);
+obtieneData(archivo).catch(error => {
+    winston.info(error);
+});
 
 async function obtieneData(archivo){
    let datos = await futils.readFile(archivo); 

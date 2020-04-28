@@ -1,10 +1,14 @@
 //Api horas extra
 const express = require('express')
-const app = express();
-
+const morgan = require('morgan')
+const winston = require('../config/winston')
 require('dotenv').config();
-const port = process.env.PORT||3000;
 const data = require('./data');
+
+const app = express();
+const port = process.env.PORT||3000;
+
+app.use(morgan('combined',{ stream: winston.stream }));
 
 app.get("/entradas",(req,res) => {
     return res.send(data.entradas);
@@ -20,23 +24,3 @@ app.get("/entradas/:index",(req,res) => {
 app.listen(port,() => 
     console.log(`Api xTras escuchando en puerto ${port}`),
 );
-
-/**
-function buildEntrada(value,index,array){
-    o = Object.create(entrada);
-    o.proyecto = value.proyecto;
-    o.tarea = value.tarea;
-    o.fecha = value.fecha;
-    o.horas = value.horas;
-    o.descripcion = value.descripcion;
-    return o;
-}
-
-function procesaEntradas(data){
-    let entradas = data.entradas.map(buildEntrada);
-    console.log(entradas);
-}
-
-
-//futils.readFile('./data/entradas.json',procesaEntradas);
-*/
