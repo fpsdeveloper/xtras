@@ -1,9 +1,9 @@
 //Api horas extra
 const express = require('express')
 const morgan = require('morgan')
-const winston = require('../config/winston')
+const winston = require('./config/winston')
 require('dotenv').config();
-const routes = require('./router')
+const routes = require('./api/routes/router')
 
 const app = express();
 const port = process.env.PORT||3000;

@@ -1,6 +1,6 @@
 const futils = require('./fileUtils');
 const modelos = require('./model');
-const winston = require('../config/winston')
+const winston = require('./config/winston')
 
 const dataPath = "./data";
 
